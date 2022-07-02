@@ -49,13 +49,13 @@ const usuariosPut = async(req, res) => {
 
     res.json({
         usuario
-    })
+    });
 };
 
 const usuariosPatch = (req, res) => {
     res.json({
         msg: 'Patch API - Controlador'
-    })
+    });
 };
 
 const usuariosDelete = async(req, res) => {
@@ -67,7 +67,7 @@ const usuariosDelete = async(req, res) => {
 
     res.json({
         usuario
-    })
+    });
 };
 
 module.exports = {

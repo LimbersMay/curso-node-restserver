@@ -61,7 +61,7 @@ const actualizarCategoria = async( req, res = response ) => {
 
     const {   id   } = req.params;
     const { estado, usuario, ...data } = req.body;
-
+    
     data.nombre = data.nombre.toUpperCase();
     data.usuario = req.usuario._id;
     
@@ -74,12 +74,6 @@ const actualizarCategoria = async( req, res = response ) => {
 
 // Borrar categoria - Cambiar estado a false
 const borrarCategoria = async( req, res = response) => {
-
-    if (req.usuario.rol !== 'ADMIN_ROLE') {
-        res.status(401).json({
-            msg: 'No tiene permiso para realizar esta acción'
-        });
-    }
 
     const { id } = req.params;
     const categoria = await Categoria.findByIdAndUpdate( id, { estado: false }, { new: true });

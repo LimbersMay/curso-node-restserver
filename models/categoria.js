@@ -26,4 +26,4 @@ categoriaSchema.methods.toJSON = function() {
     return categoria;
 }
 
-module.exports = model('categoria', categoriaSchema);
+module.exports = model('Categoria', categoriaSchema);
